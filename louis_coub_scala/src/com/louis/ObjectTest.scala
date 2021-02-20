@@ -14,6 +14,9 @@ object ObjectTest{
 
 
     val p=new Person("Louis","DDD")
+    val pp=new Person("Louis","DDD","helld")
+
+    val sb=new StringBuilder
 
   }
 }
