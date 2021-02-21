@@ -1,5 +1,7 @@
 package com.louis
 
+import java.util
+
 /**
  *
  * @author jun.liu
@@ -17,6 +19,15 @@ object ObjectTest{
     val pp=new Person("Louis","DDD","helld")
 
     val sb=new StringBuilder
+
+    var l1=new util.ArrayList[Int]()
+    var l2=new util.ArrayList()
+    if (l1==l2) {
+
+    }
+
+
+
 
   }
 }

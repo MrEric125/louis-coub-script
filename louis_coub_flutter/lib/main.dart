@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget{
       title: "welcome to flutter",
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.lightGreen[600],
+        primaryColor: Colors.lightGreen[100],
 
         accentColor:Colors.orange[600]
       ),
