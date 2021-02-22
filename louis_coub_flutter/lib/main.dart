@@ -4,8 +4,6 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(MyApp());
 }
-
-
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -20,8 +18,11 @@ class MyApp extends StatelessWidget{
       ),
     );
   }
-
 }
+
+/**
+ * 目前不算跑起来了，当点击按钮的时候还是会报错。
+ */
 class FirstPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,6 @@ class SecondPage extends StatelessWidget{
       ),
     );
   }
-
 }
 class Counter with ChangeNotifier{
   int _count=0;
