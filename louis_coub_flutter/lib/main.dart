@@ -1,22 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:louis_coub_flutter/RandomWords.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() =>runApp(MyApp());
+
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-        providers:[
-          ChangeNotifierProvider(create: (_)=>Counter(),)
+    // return MultiProvider(
+    //     providers:[
+    //       ChangeNotifierProvider(create: (_)=>Counter(),)
+    //
+    // ],
+    //   child: MaterialApp(
+    //     title: "provider示例",
+    //     home: FirstPage(),
+    //   ),
+    // );
+    /**
+     * 随机生成单词的一个主页
+     */
+    return MaterialApp(
+      title: "welcome to flutter",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("第一个页面"),
 
-    ],
-      child: MaterialApp(
-        title: "provider示例",
-        home: FirstPage(),
+        ),
+        body: Center(
+          child: RandomWords()
+
+        ),
       ),
     );
+
   }
 }
 
