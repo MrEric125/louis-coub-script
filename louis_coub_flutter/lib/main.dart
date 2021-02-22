@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,58 +9,71 @@ void main() {
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    print("===========================");
-    final appName='自定义主题';
-    print(context);
-    return MaterialApp(
-      title: "welcome to flutter",
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: Colors.lightGreen[100],
+    return MultiProvider(
+        providers:[
+          ChangeNotifierProvider(create: (_)=>Counter(),)
 
-        accentColor:Colors.orange[600]
-      ),
-      home: MyHomePage(
-        title: appName,
+    ],
+      child: MaterialApp(
+        title: "provider示例",
+        home: FirstPage(),
       ),
     );
-
   }
 
 }
-class MyHomePage extends StatelessWidget{
-
-  final String title;
-  MyHomePage({Key key,@required this.title}): super(key: key);
+class FirstPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("第一个页面"),
+        actions: <Widget>[
+          FlatButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context){
+            return SecondPage();
+          })), child: Text("下一页"))
+        ],
+      ),
+      body: Center(
+        child: Text("${Provider.of<Counter>(context).count}"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Provider.of<Counter>(context).increment();
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+class SecondPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text("第二个页面"),
 
       ),
       body: Center(
-        child: Container(
-          color: Theme.of(context).accentColor,
-          child: Text(
-            "zhangsan"
-          ),
-
-        ),
-
+        child: Text("${Provider.of<Counter>(context).count}"),
       ),
-      floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(accentColor: Colors.grey),
-        child: FloatingActionButton(
-          onPressed: null,
-          child: Icon(Icons.computer),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Provider.of<Counter>(context).increment();
 
+        },
+        child: Icon(Icons.add),
       ),
-
     );
   }
 
+}
+class Counter with ChangeNotifier{
+  int _count=0;
+  int get count=>_count;
+  void increment(){
+    _count++;
+    notifyListeners();
+  }
 }
