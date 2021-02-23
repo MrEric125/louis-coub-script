@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:louis_coub_flutter/MyImagePicker.dart';
 import 'package:louis_coub_flutter/RandomWords.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget{
 
         ),
         body: Center(
-          child: RandomWords()
+          child: ImagePickerWidget()
 
         ),
       ),
