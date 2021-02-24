@@ -55,9 +55,11 @@ class LoginPage extends StatelessWidget {
               child: const Text('Connect with Google Photos'),
               onPressed: () async {
                 try {
-                  await apiModel.signIn()
-                      ? _navigateToTripList(context)
-                      : _showSignInError(context);
+                  _navigateToTripList(context);
+
+                  // await apiModel.signIn()
+                  //     ? _navigateToTripList(context)
+                  //     : _showSignInError(context);
                 } on Exception catch (error) {
                   print(error);
                   _showSignInError(context);
