@@ -13,9 +13,8 @@ Page({
    */
   onLoad: function (options) {
     console.log("option")
-    
-
   },
+  
   handleParent(){
     console.log("parent")
   },

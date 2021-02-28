@@ -1,8 +1,14 @@
 <!--pages/index.wxml-->
 <view class="indexContainer ">
-   <image class="avatarUrl" src="/static/image/nvsheng.jpg"></image>
-   <text class="username">中国男人</text>
-   <view class="goStudy" bindtap="toLogs">
-     <text bindtap="toLogs">Hello world</text>
-   </view>
+    <swiper class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33">
+        <swiper-item >
+            <image src="/static/image/nvsheng.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/static/image/nvsheng.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/static/image/nvsheng.jpg"></image>
+        </swiper-item>
+    </swiper>
 </view>

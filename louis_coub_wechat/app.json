@@ -9,6 +9,22 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "/static/image/tabs/tab-home.png",
+      "selectedIconPath": "/static/image/tabs/tab-home-current.png"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "text": "视频",
+      "iconPath": "/static/image/tabs/select.png",
+      "selectedIconPath": "/static/image/tabs/selected.png"
+    }
+    ]
+  },
   "style": "v2",
+
   "sitemapLocation": "sitemap.json"
 }
